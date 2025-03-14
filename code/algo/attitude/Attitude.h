@@ -32,8 +32,8 @@ struct Control_Turn_Manual_Params;
 struct Control_Target;
 struct Velocity_Motor;
 
-void attitude_init();     // attitude init
-void attitude_cal_ekf();  // attitude calculate
+void attitude_init(void);     // attitude init
+void attitude_cal_ekf(void);  // attitude calculate
 void attitude_cal_amend(struct Control_Turn_Manual_Params* turn_param,
                         struct Control_Target* control_target,
                         struct Velocity_Motor* velocity_motor,

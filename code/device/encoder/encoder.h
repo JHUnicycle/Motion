@@ -18,7 +18,7 @@
 
 struct Velocity_Motor;
 
-void encoder_init();
+void encoder_init(void);
 void get_momentum_encoder(struct Velocity_Motor* motorVelocity);
 void get_bottom_encoder(struct Velocity_Motor* motorVelocity);
 

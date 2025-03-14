@@ -3,8 +3,9 @@
 uint32 bottom_motor_deadzone = 0;
 
 void motor_init() {
-    gpio_init(P22_3, GPO, 1, GPO_PUSH_PULL);
-    gpio_set_level(P22_3, 1);
+    // bottom motor
+    gpio_init(EN_BOTTOM, GPO, 1, GPO_PUSH_PULL);
+    gpio_set_level(EN_BOTTOM, 1);
 
     pwm_init(MOTOR_BOTTOM, MOTOR_HZ, 0);
     gpio_init(DIR_BOTTOM, GPO, 1, GPO_PUSH_PULL);
@@ -31,7 +32,7 @@ void set_bottom_motor_pwn(int32 pwm) {
         pwm_set_duty(MOTOR_BOTTOM, -pwm);
     }
 }
-
+ 
 void set_bottom_motor_hertz(int32 hertz) {
     restrictValueI(&hertz, MOTOR_HZ + MOTOR_HZ_RANGE,
                    MOTOR_HZ - MOTOR_HZ_RANGE);

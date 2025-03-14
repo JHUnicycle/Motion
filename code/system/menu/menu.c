@@ -234,7 +234,14 @@ MENU_TABLE Test_MenuTable[] = {
      {.SubMenu = Table_Null},
      Functions,
      {.ItemFunc = test_attitude}},
-    {(uint8*)"IMU", {.SubMenu = Table_Null}, Functions, {.ItemFunc = test_imu}},
+    {(uint8*)"IMU", 
+     {.SubMenu = Table_Null},
+     Functions,
+     {.ItemFunc = test_imu}},
+    {(uint8*)"ENCODER", 
+     {.SubMenu = Table_Null},
+     Functions,
+     {.ItemFunc = test_encoder}},
 };
 
 MENU_TABLE MainMenu_Table[] = {

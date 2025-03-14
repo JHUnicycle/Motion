@@ -43,7 +43,7 @@ KEY_STATUS_e key_check_status(KEY_e key);
 uint8 key_get_msg(KEY_MSG_t* keymsg);
 void key_send_msg(KEY_MSG_t keymsg);
 
-void key_IRQHandler();
+void key_IRQHandler(void);
 
 extern KEY_MSG_t keymsg;
 

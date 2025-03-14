@@ -14,9 +14,9 @@ void menu_get_params(
     struct Control_Turn_Manual_Params* control_turn_params,
     struct Control_Motion_Manual_Parmas* control_motion_params) {
     // euler angle
-    euler_angle_bias->roll = g_menu_manual_param.mechanicalRollAngle;
-    euler_angle_bias->pitch = g_menu_manual_param.mechanicalPitchAngle;
-    euler_angle_bias->yaw = g_menu_manual_param.mechanicalYawAngle;
+    euler_angle_bias->roll = 1.0f * g_menu_manual_param.mechanicalRollAngle;
+    euler_angle_bias->pitch = 1.0f * g_menu_manual_param.mechanicalPitchAngle;
+    euler_angle_bias->yaw = 1.0f * g_menu_manual_param.mechanicalYawAngle;
 
     // pid
     for (uint8 i = 0; i < 3; i++) {
@@ -33,6 +33,9 @@ void menu_get_params(
             g_menu_manual_param.side_angle_parameter[i];
         control_motion_params->side_velocity_parameter[i] =
             g_menu_manual_param.side_velocity_parameter[i];
+
+
+
 
         control_motion_params->turn_angle_parameter[i] =
             g_menu_manual_param.turn_angle_parameter[i];

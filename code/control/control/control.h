@@ -94,7 +94,7 @@ extern struct Control_Time g_control_time;
 extern struct Control_Motion_Manual_Parmas g_control_motion_params;
 
 void control_init(struct Control_Motion_Manual_Parmas* control_motion_params);
-void control_manual_param_init();
+void control_manual_param_init(void);
 void control_bottom_balance(struct Control_Target* control_target,
                             struct Control_Flag* control_flag,
                             struct Velocity_Motor* vel_motor,
@@ -106,11 +106,11 @@ void control_side_balance(
     struct Velocity_Motor* vel_motor,
     struct EulerAngle* euler_angle_bias);
 
-void control_turn_balance();
+void control_turn_balance(void);
 void control_shutdown(struct Control_Target* control_target,
                       struct EulerAngle* euler_angle_bias);
 
-int32 get_bottom_duty();
-int32 get_side_duty();
+int32 get_bottom_duty(void);
+int32 get_side_duty(void);
 
 #endif

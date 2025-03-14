@@ -1,7 +1,10 @@
 #include "key.h"
 
 KEY_MSG_t keymsg = {KEY_B, KEY_UP};
-gpio_pin_enum KEY_PTxn[KEY_MAX] = {P13_2, P13_1, P13_3, P14_6, P11_2};
+// gpio_pin_enum KEY_PTxn[KEY_MAX] = {P13_2, P13_1, P13_3, P14_6, P11_2};
+// gpio_pin_enum KEY_PTxn[KEY_MAX] = {P13_3, P11_2, P14_6, P13_1, P13_2}; // v1.31
+gpio_pin_enum KEY_PTxn[KEY_MAX] = {P20_7, P20_6, P14_1, P20_8, P14_0};
+
 
 KEY_MSG_t key_msg[KEY_MSG_FIFO_SIZE];
 volatile uint8 key_msg_front = 0, key_msg_rear = 0;

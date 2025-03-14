@@ -16,12 +16,12 @@ void test_bottom_motor() {
         if (keymsg.key == KEY_U)  // 向前
         {
             gpio_set_level(DIR_BOTTOM, 1);
-            pwm_set_duty(MOTOR_BOTTOM, 8000);
+            pwm_set_duty(MOTOR_BOTTOM, 1000);
         }
         if (keymsg.key == KEY_D)  // 向后
         {
             gpio_set_level(DIR_BOTTOM, 0);
-            pwm_set_duty(MOTOR_BOTTOM, 8000);
+            pwm_set_duty(MOTOR_BOTTOM, 1000);
         }
         lcd_show_int(0, 5, encoder_get_count(ENCODER_BOTTOM), 5);
     }
@@ -33,7 +33,7 @@ void test_side_motor() {
     lcd_clear();
     lcd_show_string(0, 0, "KEY_U: left  forward");
     lcd_show_string(0, 1, "KEY_D: left backward");
-    lcd_show_string(0, 2, "KEY_B: right forward");
+    lcd_show_string(0, 2, "KEY_B:right  forward");
     lcd_show_string(0, 3, "KEY_R:right backward");
     lcd_show_string(0, 4, "Press KEY_L to exit");
     while (keymsg.key != KEY_L) {
@@ -94,6 +94,19 @@ void test_imu() {
         lcd_show_string(0, 4, "z:");
         lcd_show_float(0, 5, g_imu_data.gyro.z, 3, 3);
         lcd_show_float(8, 5, g_imu_data.acc.z, 3, 3);
+    }
+    lcd_clear();
+}
+
+void test_encoder() {
+    lcd_clear();
+    while (keymsg.key != KEY_L) {
+        lcd_show_string(0, 0, "BOTTOM:");
+        lcd_show_float(0, 1, encoder_get_count(ENCODER_BOTTOM), 3, 3);
+        lcd_show_string(0, 2, "FRONT:");
+        lcd_show_float(0, 3, encoder_get_count(MOMENTUM_ENCODER_FRONT), 3, 3);
+        lcd_show_string(0, 4, "BACK:");
+        lcd_show_float(0, 5, encoder_get_count(MOMENTUM_ENCODER_BACK), 3, 3);
     }
     lcd_clear();
 }

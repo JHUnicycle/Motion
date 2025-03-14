@@ -41,7 +41,7 @@ struct Control_Turn_Manual_Params;
 struct Velocity_Motor;
 struct EulerAngle;
 
-void system_init();
+void system_init(void);
 void system_attitude_timer(
     struct Control_Turn_Manual_Params* control_turn_params,
     struct Control_Target* control_target,

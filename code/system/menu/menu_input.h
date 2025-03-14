@@ -39,7 +39,7 @@ struct Control_Time;
 struct Control_Turn_Manual_Params;
 struct Control_Motion_Manual_Parmas;
 
-void menu_manual_param_init();
+void menu_manual_param_init(void);
 void menu_get_params(
     struct EulerAngle* euler_angle_bias,
     struct Control_Time* control_time,
